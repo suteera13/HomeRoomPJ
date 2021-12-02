@@ -1,62 +1,51 @@
 <template>
   <div class="loginbox">
-    <p class="text-center text2">
+    <p class="text11 text-center">
       HomeRooM
     </p>
-    <p class="text-center text3">
-      Chaiyaphum Technical College
+    <p class="text12 text-center">
+      C - T - C
+    </p>
+    <div class="boxon">
+      <p class="text2">
+        Log In
+      </p>
+    </div>
+    <p class="text3">
+      กรุณาล็อกอินเข้าสู่ระบบ
     </p>
     <div class="boxin text-center">
       <v-form>
-        <v-text-field label="Name" outlined />
-        <v-text-field label="Password" outlined style="margin-top: -5%;" />
-        <v-checkbox label="checkbox" style="margin-top: -10%;" />
-        <v-btn outlined class="btn2">
-          Log In
-        </v-btn>
-        <a href="signup">
+        <v-text-field label="Name" />
+        <v-text-field label="Password" />
+        <v-checkbox label="Remember password" />
+        <nuxt-link to="/home" style="color: #37474F; font-size: 24px;font-family: FC Minimal;">
+          <p class="btn2">
+            Log In
+          </p>
+        </nuxt-link>
+        <br>
+        <nuxt-link to="/signup">
           <p class="text4">
             Sign up
           </p>
-        </a>
+        </nuxt-link>
       </v-form>
     </div>
   </div>
 </template>
 
 <style>
-  .loginbox{
-    display: block;
-    background-color: #fff;
-    color: #212121;
-    width: 320px;
-    height: 500px;
-    padding: 20px;
-    border-radius: 20px;
-    margin: auto;
-    margin-top: 10%;
-  }
-  .text2{
-    font-size: 34px;
-    line-height : 0;
-    margin-top: 15%;
-  }
-  .text3{
-    color: #BDBDBD;
-    font-size: 14px;
-  }
-  .text4{
-    color: #FFC107;
-    font-size: 14px;
-    margin-top: 5%;
-  }
-  .boxin{
-    display: block;
-    padding: 35px;
+  .text11{
+    font-family: "FC Minimal";
+    font-size: 24px;
+    color: #000;
     margin-top: -5%;
   }
-  .btn2{
-    width: 100px;
-    margin-top: 30%;
+  .text12{
+    font-size: 12px;
+    word-spacing: 5px;
+    color: #BDBDBD;
+    margin-top: -10%;
   }
 </style>

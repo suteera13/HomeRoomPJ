@@ -1,10 +1,17 @@
 <template>
   <div>
-    <a href="login">
-      <v-img src="../img/23.png" class="img" />
-    </a>
-    <p class="text1 text-center">HomeRooM</p>
-    <p class="text2 text-center">chaiyaphum technical college</p>
+    <p>
+      <nuxt-link to="/login">
+        <v-img src="../img/25.png" class="img" />
+      </nuxt-link>
+    </p>
+
+    <p class="text11 text-center">
+      HomeRooM
+    </p>
+    <p class="text12 text-center">
+      C - T - C
+    </p>
   </div>
 </template>
 
@@ -14,13 +21,16 @@
     margin: auto;
     margin-top: 70%;
   }
-  .text1{
-    font-size: 22px;
-    color: #fff;
-  }
-  .text2{
-    font-size: 8px;
-    color: #BDBDBD;
+  .text11{
+    font-family: "FC Minimal";
+    font-size: 34px;
+    color: #000;
     margin-top: -5%;
+  }
+  .text12{
+    font-size: 14px;
+    word-spacing: 5px;
+    color: #BDBDBD;
+    margin-top: -8%;
   }
 </style>
