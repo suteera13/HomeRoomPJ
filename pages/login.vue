@@ -1,9 +1,9 @@
 <template>
   <div class="loginbox">
-    <p class="text11 text-center">
+    <p class="text13 text-center">
       HomeRooM
     </p>
-    <p class="text12 text-center">
+    <p class="text14 text-center">
       C - T - C
     </p>
     <div class="boxon">
@@ -16,14 +16,14 @@
     </p>
     <div class="boxin text-center">
       <v-form>
-        <v-text-field label="Name" />
-        <v-text-field label="Password" />
+        <v-text-field v-model="user" label="Name" />
+        <v-text-field v-model="pass" label="Password" />
         <v-checkbox label="Remember password" />
-        <nuxt-link to="/home" style="color: #37474F; font-size: 24px;font-family: FC Minimal;">
-          <p class="btn2">
+        <div style="color: #37474F; font-size: 24px;font-family: FC Minimal;">
+          <p class="btn2" @click="onSave">
             Log In
           </p>
-        </nuxt-link>
+        </div>
         <br>
         <nuxt-link to="/signup">
           <p class="text4">
@@ -35,17 +35,20 @@
   </div>
 </template>
 
-<style>
-  .text11{
-    font-family: "FC Minimal";
-    font-size: 24px;
-    color: #000;
-    margin-top: -5%;
+<script>
+export default {
+  data: () => ({
+    user: '',
+    pass: ''
+  }),
+  methods: {
+    async onSave () {
+      console.log('onSave')
+      const res = await fetch('http://localhost:7001/list?user=' +
+      this.user + '&pass=' + this.pass)
+      const data = await res.json()
+      console.log('data=', data)
+    }
   }
-  .text12{
-    font-size: 12px;
-    word-spacing: 5px;
-    color: #BDBDBD;
-    margin-top: -10%;
-  }
-</style>
+}
+</script>

@@ -1,9 +1,9 @@
 <template>
   <div class="loginbox">
-    <p class="text11 text-center">
+    <p class="text13 text-center">
       HomeRooM
     </p>
-    <p class="text12 text-center">
+    <p class="text14 text-center">
       C - T - C
     </p>
     <div class="boxon">

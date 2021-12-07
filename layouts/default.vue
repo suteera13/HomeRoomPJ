@@ -62,4 +62,16 @@
     width: 140px;
     margin-top: 20%;
   }
+  .text13{
+    font-family: "FC Minimal";
+    font-size: 24px;
+    color: #000;
+    margin-top: -5%;
+  }
+  .text14{
+    font-size: 12px;
+    word-spacing: 5px;
+    color: #BDBDBD;
+    margin-top: -10%;
+  }
 </style>
