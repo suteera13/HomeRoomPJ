@@ -1,53 +1,55 @@
 <template>
-  <div class="loginbox">
-    <p class="text13 text-center">
-      HomeRooM
-    </p>
-    <p class="text14 text-center">
-      C - T - C
-    </p>
-    <div class="boxon">
-      <p class="text2">
-        Log In
-      </p>
-    </div>
-    <p class="text3">
-      กรุณาล็อกอินเข้าสู่ระบบ
-    </p>
-    <div class="boxin text-center">
-      <v-form>
-        <v-text-field v-model="user" label="Name" />
-        <v-text-field v-model="pass" label="Password" />
-        <v-checkbox label="Remember password" />
-        <div style="color: #37474F; font-size: 24px;font-family: FC Minimal;">
-          <p class="btn2" @click="onSave">
-            Log In
-          </p>
-        </div>
-        <br>
-        <nuxt-link to="/signup">
-          <p class="text4">
-            Sign up
-          </p>
-        </nuxt-link>
-      </v-form>
-    </div>
+  <div class="box1">
+    <h1 class="text2">
+      LOG IN
+    </h1>
+    <br>
+    <v-text-field
+      label="Username"
+      placeholder="ชื่อผู้ใช้ของคุณ"
+      filled
+    />
+    <v-text-field
+      label="Password"
+      placeholder="รหัสผ่านของคุณ"
+      filled
+    />
+    <v-btn block color="indigo" href="/home" dark>
+      Log In
+    </v-btn>
   </div>
 </template>
 
 <script>
 export default {
-  data: () => ({
+  deta: () => ({
     user: '',
-    pass: ''
+    pass: '',
+    dialog: false,
+    dialog_false: false
   }),
   methods: {
-    async onSave () {
-      console.log('onSave')
+    async LogIn () {
+      console.log('LogIn')
       const res = await fetch('http://localhost:7001/list?user=' +
       this.user + '&pass=' + this.pass)
-      const data = await res.json()
-      console.log('data=', data)
+      const result = await res.json()
+      console.log('data=', result)
+      if (result.status > 0) {
+        console.log('Login OK')
+        this.dialog = true
+        setInterval(() => {
+          this.dialog = false
+          this.$router.push('/home')
+        }, 3000)
+      } else {
+        console.log('Login Error')
+        this.dialog_false = true
+        setInterval(() => {
+          this.dialog_false = false
+          this.$router.push('/login')
+        }, 3000)
+      }
     }
   }
 }

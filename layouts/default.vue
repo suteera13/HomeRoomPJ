@@ -9,69 +9,30 @@
 </template>
 
 <style>
-  /* .bg{
-    background-image: url("../assets/img/homeroom.png");
-    background-attachment: fixed;
-    background-size: 100% 100%, auto;
-    height: 100%;
-  } */
-  .bg2{
-    background-color: #fff;
-    height: 100%;
-  }
-  .loginbox{
-    display: block;
-    color: #212121;
-    width: 320px;
-    height: 500px;
-    padding: 40px;
-    border-radius: 20px;
-    margin: auto;
-  }
-  .boxon{
-    display: block;
-    background-color: #000;
-    width: 200px;
-    margin-left: -25%;
-  }
-  .text2{
-    color: #fff;
-    font-size: 40px;
-    font-family: "FC Minimal";
-    margin-top: 15%;
-    margin-left: 30%;
-  }
-  .text3{
-    color: #BDBDBD;
-    font-size: 14px;
-  }
-  .text4{
-    display: inline-block;
-    color: #000;
-    font-size: 14px;
-  }
-  .boxin{
-    display: block;
-    margin-top: 10%;
-  }
-  .btn2{
-    display: inline-block;
-    padding: 5px;
-    border: 1px solid #000;
-    color: #000;
-    width: 140px;
-    margin-top: 20%;
-  }
-  .text13{
-    font-family: "FC Minimal";
-    font-size: 24px;
-    color: #000;
-    margin-top: -5%;
-  }
-  .text14{
-    font-size: 12px;
-    word-spacing: 5px;
-    color: #BDBDBD;
-    margin-top: -10%;
-  }
+.bg2{
+  background-color: #fff;
+  background-attachment: fixed;
+  height: 100%;
+}
+.box1{
+  margin-top: 10%;
+  padding: 50px;
+}
+.text1{
+  font-family: "FC Minimal";
+  font-size: 34px;
+  color: #000;
+  margin-top: -5%;
+}
+.text2{
+  font-family: "FC Minimal";
+  font-size: 50px;
+  color: #000;
+}
+.text3{
+  font-family: "FC Minimal";
+  color: #000;
+  font-size: 18px;
+  margin-left: 14px;
+}
 </style>
