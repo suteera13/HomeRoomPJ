@@ -43,7 +43,7 @@
         </v-banner>
       </v-card>
       <!-- edit fingerprint -->
-      <v-card color="transparent" elevation="0" href="/editsig">
+      <v-card color="transparent" elevation="0" @click="NextFing">
         <v-banner class="padd" color="transparent" elevation="0" single-line>
           <v-icon>mdi-fingerprint</v-icon>
           แก้ไขลายเซ็น
@@ -53,7 +53,7 @@
         </v-banner>
       </v-card>
       <!-- back home -->
-      <v-card color="transparent" elevation="0">
+      <v-card color="transparent" elevation="0" @click="NextHome">
         <v-banner class="padd" color="transparent" elevation="0" single-line>
           <v-icon>mdi-home</v-icon>
           หน้าแรก
@@ -103,6 +103,10 @@ export default {
     NextEdit (id) {
       console.log('id=', this.id)
       this.$router.push('/editmail?id=' + this.id)
+    },
+    NextFing (id) {
+      console.log('id=', this.id)
+      this.$router.push('/editsig?id=' + this.id)
     },
     NextHome () {
       console.log('next home')

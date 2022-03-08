@@ -17,7 +17,7 @@
         placeholder="รหัสผ่านของคุณ"
         prepend-icon="mdi-key"
       />
-      <v-btn class="top drop" color="normal" href="/profile">
+      <v-btn class="top drop" color="normal" @click="NextPf">
         cancel
       </v-btn>
       <v-btn class="top drop" color="indigo" dark>
@@ -29,5 +29,13 @@
 
 <script>
 export default {
-  layout: 'bgw'
+  layout: 'bgw',
+  methods: {
+    NextPf () {
+      console.log('next profile')
+      this.id = this.$route.query.id
+      this.$router.push('/profile?id=' + this.id)
+    }
+  }
 }
+</script>

@@ -10,7 +10,7 @@
         </template>
       </v-banner>
     </v-card>
-    <div class="padd2 drop">
+    <v-form class="padd2 drop">
       <v-text-field
         v-model="email"
         label="email"
@@ -22,14 +22,14 @@
         prepend-icon="mdi-key"
       />
       <div class="text-right">
-        <v-btn class="top drop" color="normal">
+        <v-btn class="top drop" color="normal" @click="NextPf">
           cancel
         </v-btn>
         <v-btn class="top drop" color="indigo" dark @click="SaveMail">
           save
         </v-btn>
       </div>
-    </div>
+    </v-form>
 
     <!-- dialog -->
     <div>
@@ -45,10 +45,21 @@
             <v-btn text @click="dialog = false">
               ไม่
             </v-btn>
-            <v-btn text @click="dialog = false">
+            <v-btn text @click="SaveConfirm">
               ใช่
             </v-btn>
           </div>
+        </v-card>
+      </v-dialog>
+    </div>
+    <!-- dialog_false -->
+    <div>
+      <v-dialog v-model="dialog_false" width="200">
+        <v-card light class="padd text-center">
+          <v-icon large left color="error">
+            mdi-close-circle-outline
+          </v-icon>
+          รหัสผ่านไม่ถูกต้อง
         </v-card>
       </v-dialog>
     </div>
@@ -56,10 +67,13 @@
 </template>
 
 <script>
+import axios from 'axios'
 export default {
   layout: 'bgw',
   data: () => ({
     dialog: false,
+    dialog_false: false,
+    id: '',
     email: '',
     password: ''
     // firstname: '',
@@ -71,6 +85,7 @@ export default {
     const res = await fetch('http://localhost:7000/list_tch?id=' + this.id)
     const data = await res.json()
     console.log('=', data.datas)
+    this.id = data.datas[0].id
     this.email = data.datas[0].email
     // this.firstname = data.datas[0].firstname
     // this.lastname = data.datas[0].lastname
@@ -84,15 +99,30 @@ export default {
       }, 10000)
     },
     async SaveConfirm () {
+      this.dialog = false
       const save = {
+        id: this.id,
         email: this.email,
         password: this.password
       }
-      const res = await fetch('http://localhost:7000/edit_mail?id=', save)
+      console.log('save')
+      const res = await axios.post('http://localhost:7000/edit_mail', save)
       console.log(res.data)
+      console.log('status=', res.data.status)
       if (res.data.status === 1) {
+        console.log('save success')
         this.$router.push('/profile?id=' + this.id)
+      } else {
+        console.log('save error')
+        this.dialog_false = true
+        setInterval(() => {
+          this.dialog_false = false
+        }, 3000)
       }
+    },
+    NextPf () {
+      console.log('next profile')
+      this.$router.push('/profile?id=' + this.id)
     }
   }
 }
