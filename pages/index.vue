@@ -1,35 +1,28 @@
 <template>
-  <div>
+  <div class="text-center">
     <p>
-      <v-img src="../img/25.png" class="img" />
+      <v-img src="../img/logoW.png" class="img" />
     </p>
-
-    <p class="text11 text-center">
-      HomeRooM
-    </p>
+    <br>
+    <v-btn class="index2" color="normal" href="/login" rounded>
+      LogIn <v-icon>mdi-chevron-right</v-icon>
+    </v-btn>
   </div>
 </template>
 
 <script>
 export default {
-  created () {
-    this.nextpage()
-  },
-  methods: {
-    nextpage () {
-      console.log('nextpage')
-      setInterval(() => {
-        this.$router.push('/login')
-      }, 3000)
-    }
-  }
+  layout: 'BGb'
 }
 </script>
 
 <style>
+.index2{
+  margin-top: 40%;
+}
 .img{
-  width: 80px;
+  width: 140px;
   margin: auto;
-  margin-top: 65%;
+  margin-top: 70%;
 }
 </style>
