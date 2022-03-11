@@ -20,7 +20,7 @@
             v-on="on"
           >
             <v-avatar size="26px">
-              <v-img src="../img/ava2.jpg" />
+              <v-img src="../storage/profiles/246.jpg" />
             </v-avatar>
           </v-btn>
         </template>
@@ -28,7 +28,7 @@
         <v-card class="padd text-center" width="200px" height="280px">
           <br>
           <v-avatar>
-            <v-img src="../img/ava2.jpg" />
+            <v-img src="../storage/profiles/246.jpg" />
           </v-avatar>
           <p class="text4">
             <strong>{{ ufirstname }}</strong>

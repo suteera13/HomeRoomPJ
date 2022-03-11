@@ -4,7 +4,7 @@
     <v-card color="transparent" elevation="0">
       <v-badge color="indigo" icon="mdi-pen" bordered overlap>
         <v-avatar class="up" size="100px">
-          <v-img src="../img/ava2.jpg" />
+          <v-img src="../storage/profiles/246.jpg" />
         </v-avatar>
       </v-badge>
     </v-card>

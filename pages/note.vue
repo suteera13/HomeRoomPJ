@@ -19,7 +19,7 @@
             v-on="on"
           >
             <v-avatar size="26px">
-              <v-img src="../img/ava2.jpg" />
+              <v-img src="../storage/profiles/246.jpg" />
             </v-avatar>
           </v-btn>
         </template>
@@ -27,7 +27,7 @@
         <v-card class="padd text-center" width="200px" height="280px">
           <br>
           <v-avatar>
-            <v-img src="../img/ava2.jpg" />
+            <v-img src="../storage/profiles/246.jpg" />
           </v-avatar>
           <p class="text4">
             <strong>name</strong>
@@ -100,14 +100,7 @@
                     <td>{{ item.firstname }}</td>
                     <td>{{ item.lastname }}</td>
                     <td class="ww">
-                      <v-container fluid>
-                        <v-radio-group row>
-                          <v-radio label="มา" />
-                          <v-radio label="ขาด" />
-                          <v-radio label="ลา" />
-                          <v-radio label="สาย" />
-                        </v-radio-group>
-                      </v-container>
+                      <v-select :items="tus" label="มา" />
                     </td>
                   </tr>
                 </tbody>
@@ -274,6 +267,7 @@ export default {
     t_id: '',
     std_id: '',
     tabs: null,
+    tus: ['มา', 'ขาด', 'ลา', 'สาย'],
     check: ['เสี่ยง', 'ไม่เสี่ยง'],
     num: '0',
     desserts: [
